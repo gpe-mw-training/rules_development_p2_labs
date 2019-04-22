@@ -7,7 +7,7 @@ import org.acme.insurance.Rejection;
 rule "TooManyTickets"
 	dialect "mvel"
 	when
-		Driver( numberOfAccidents > 6 )
+		Driver( numberOfTickets > 6 )
 	then
 		Rejection fact0 = new Rejection();
 		fact0.setReason( "Too Many Tickets" );
